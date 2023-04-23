@@ -1,0 +1,58 @@
+<div>
+    <div class="color-change">
+        <p>First Text</p>
+    </div>
+        <style>
+            .color-change {
+                width: 22rem;
+                padding: 2rem;
+                font-weight: 700;
+                font-size: 1.6rem;
+                border-radius: 1rem;
+                background-color: #001BFF;
+                color: #fff;
+                animation: color-change-animation 9s infinite;
+            }
+            @media (max-width: 1500px){
+                .color-change {
+                    width: 15rem;
+                    padding: 2rem;
+                    font-size: 1.2rem;
+                }
+            }
+            @media (max-width: 700px){
+                .color-change {
+                    width: 17rem;
+                    padding: 1.5rem;
+                    font-weight: 700;
+                    font-size: 1rem;
+                }
+            }
+            @keyframes color-change-animation {
+                0% {
+                background-color: #001BFF;
+                color: #fff;
+                }
+                33% {
+                background-color: #F9720F;
+                color: #fff;
+                }
+                66% {
+                background-color: #EF310C;
+                color: #fff;
+                }
+            }
+        </style>
+        <script>
+                const colorChangeElement = document.querySelector('.color-change'); // select the color-change element
+                const textArray = ['Second Text', 'Third Text', 'First Text']; // array of text to be displayed
+
+                let textIndex = 0; // initialize the text index to 0
+
+                setInterval(() => { // set an interval to change the text
+                // change the text
+                colorChangeElement.innerHTML = textArray[textIndex];
+                textIndex = (textIndex + 1) % textArray.length; // increment the text index and reset it when it reaches the end of the array
+                }, 3000); // set the interval to 3 seconds, which is the duration of each cycle in the animation
+        </script>
+</div>
